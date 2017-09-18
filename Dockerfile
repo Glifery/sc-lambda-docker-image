@@ -8,12 +8,5 @@ RUN apt-get -y autoremove && apt-get clean && apt-get autoclean && rm -rf /var/l
 
 RUN npm config set unsafe-perm=true && npm install -g serverless jscs mocha sequelize-cli
 
-COPY ["./entry_point.sh", "entry_point.sh"]
-
-RUN chmod 0777 ./entry_point.sh
-
 EXPOSE 3000
 EXPOSE 8000
-
-ENTRYPOINT ["./entry_point.sh"]
-
